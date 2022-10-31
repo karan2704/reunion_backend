@@ -28,6 +28,12 @@ mongoose.connect(URI, {
     console.log('Connected to Database')
 })
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        message: "Hello User"
+    })
+})
+
 app.use('/api', authRouter)
 app.use('/api', authorize, userRouter)
 app.use('/api', authorize, postRouter)

@@ -5,7 +5,6 @@ const userRouter = express.Router()
 
 userRouter.get("/:user", (req, res) => {
     const userId = req.params.user
-    console.log('renrjgnjrgnfr', req.user)
     User.findById(userId, (err, user) => {
         if(err){
             console.log(err)
